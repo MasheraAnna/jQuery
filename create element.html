@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta carset = "utf-8">
+		<title> Study JavaScript </title>
+		<script type = 'text/javascript' src = 'lib/jquery-3.0.0.min.js'></script>
+	</head>
+	<body>
+		
+		<div id = 'div'></div>
+		<!--скрипт всегда должен быть под блоками, иначе не будет работать -->
+		
+		<script type = 'text/javascript'>
+
+			//$('body').append($('<p>Small text </p>'));
+			// ($('<p>Small text </p>')).appendTo($('body'));
+			// ($('<p>Small text </p>')).prependTo($('body'));
+			$('<p>Small text </p>').insertBefore($('#div'));
+			$('<p>Small text </p>').insertAfter($('#div'));
+		</script>
+
+	</body>
+</html>

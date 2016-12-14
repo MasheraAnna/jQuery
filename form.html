@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta carset = "utf-8">
+		<title> Study JavaScript </title>
+		<script type = 'text/javascript' src = 'lib/jquery-3.0.0.min.js'></script>
+		<!--скрипт всегда должен быть под блоками, иначе не будет работать -->
+		<script type = 'text/javascript'>
+			function valid (){
+				var state = $("input[name = 'sex']:checked").val();
+				if (!state) return $("#message").html("<font style = 'color:red'> Укажите Ваш пол </font><br />");
+				if (state == 'male')
+					$("#img").show();
+				else 
+					$("#img").hide();
+			}
+
+			function hide (){
+				var state = $("input[name = 'sex']:checked").val();
+				if (state) return $("#message").html(" ");
+			}
+
+		</script>
+
+	</head>
+	<body>
+		<form name = 'form' id = 'form'>
+			<label form = 'female'> Женский </label>
+			<input type = 'radio' id = 'female' name = 'sex' value = 'female' onclick = 'return hide()'/>
+			<label form = 'male'> Мужской </label>
+			<input type = 'radio' id = 'male' name = 'sex' value = 'male' onclick = 'return hide()'/>
+			<br /> <br />
+			<span id = 'message'></span>
+			<br />
+			<input type = 'button' id = 'done' onclick = 'return valid()' value = 'Готово'/>
+			<br />
+			<img src = "1.jpg" id = 'img' style = "display:none" id = "img" />
+		</form>
+
+	</body>
+</html>

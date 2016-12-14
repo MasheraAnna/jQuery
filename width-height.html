@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta carset = "utf-8">
+		<title> Study JavaScript </title>
+		<script type = 'text/javascript' src = 'lib/jquery-3.0.0.min.js'></script>
+		<style>
+			.div_1{
+				background-color: #e07474;
+			}
+			.div_2{
+				background-color: #b7f5a2;
+			}
+		</style>
+	</head>
+	<body>
+		
+		<div id = 'div'>Text</div>
+		<!--скрипт всегда должен быть под блоками, иначе не будет работать -->
+		<script type = 'text/javascript'>
+			$("#div").css("font-size", "50px");
+			$("#div").css("color", "red");
+			$("#div").css("background-color", function(){
+				return "blue";
+			});
+			$("#div").css("width", "250px");
+			
+			$("#div").css("height", function(){
+				var height = prompt("Define height: ")
+				return height + "px";
+			});
+		</script>
+	</body>
+</html>

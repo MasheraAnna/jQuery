@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta carset = "utf-8">
+		<title> Study JavaScript </title>
+		<script type = 'text/javascript' src = 'lib/jquery-3.0.0.min.js'></script>
+	</head>
+	<body>
+		
+		<div id = 'div'>
+			Block
+			<p> Paragraph </p>
+		</div>
+		<!--скрипт всегда должен быть под блоками, иначе не будет работать -->
+		<script type = 'text/javascript'>
+			alert($("#div").html("Это новый текст"));
+			alert($("#div").text());
+		</script>
+	</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta carset = "utf-8">
+		<title> Study JavaScript </title>
+		<script type = 'text/javascript' src = 'lib/jquery-3.0.0.min.js'></script>
+		
+		<script type = 'text/javascript'>
+			$(document).ready(function(){
+				$(document).on('click', "#add_comment", function(){
+					var form = $('form[name = "form"]');
+					form.css("display","block");
+					$("#add_comment").replaceWith(form);
+				});
+				$(document).on('click', 'input[name = "send"]', function(){
+					var comment = $('textarea[name = "comment"]').val();
+					alert ("Подождите, идет загрузка комментариев...");
+					$("<p>" + comment + "</p>").appendTo("#comment");
+					$('textarea[name = "comment"]').val(null);
+				})
+			})
+		</script>
+	</head>
+	<body>
+		<div id = 'comment'>
+			<p> Комментарий 1 </p>
+			<p> Комментарий 2 </p>
+			<p> Комментарий 3 </p>
+		</div>
+		<form name = 'form' action = '#' method = 'post' id = 'form' style='display:none' onsubmit = 'return false'>
+			<textarea id = 'textarea' name = 'comment' rows = '10' cols = '30' placeholder = 'insert a comment'></textarea><br/>
+			<input type = 'submit' name = 'send' value = 'Добавить комментарий' id = 'done'/>
+		</form>
+
+		<a href = '#' onclick = 'return false' id = 'add_comment'>Добавить комментарий</a>
+		
+	</body>
+</html>

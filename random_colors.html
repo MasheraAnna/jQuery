@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta carset = "utf-8">
+		<title> Study JavaScript </title>
+		<script type = 'text/javascript' src = 'lib/jquery-3.0.0.min.js'></script>
+		<style>
+			.block{
+				width: 50px;
+				height: 50px;
+				margin-bottom: 20px;
+				border-radius: 5px;
+			}
+		</style>
+
+		<script type = 'text/javascript'>
+
+			function GetNumber(min, max){
+				return Math.floor(Math.random() * (max - min +1) + min)
+			}
+
+			$(document).ready (function(){
+
+				$("#addBlock").click (function (){
+					var randName = GetNumber(1, 700);
+				$("#blocks").prepend ("<div class = 'block "+ randName +" '>" + randName + "</div>");
+				
+				$("." + randName).css("background", "#" + GetNumber(0,9) + GetNumber(0,9) + GetNumber(0,9))
+				});
+			})
+		</script>
+
+	</head>
+	<body>
+		<button id = "addBlock">Добавить блок</button>
+		<br /> <br />
+		<div id = 'blocks'></div>
+	</body>
+</html>

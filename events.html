@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta carset = "utf-8">
+		<title> Study JavaScript </title>
+		<script type = 'text/javascript' src = 'lib/jquery-3.0.0.min.js'></script>
+	</head>
+	<body>
+		
+		<div id = 'red' style = 'height: 50px; width: 50px; background-color: red'></div>
+		<div id = 'blue' style = 'height: 50px; width: 50px; background-color: blue'></div>
+		<div id = 'green' style = 'height: 50px; width: 50px; background-color: green'></div>
+
+
+		<script type = 'text/javascript'>
+
+			function incSize(event){
+
+				var width = Number(event.target.style.width.substring(0, event.target.style.width.length - 2)) + 10 + "px";
+				event.target.style.width = width
+				var height = Number(event.target.style.height.substring(0, (event.target.style.height.length - 2))) + 10 + "px";
+				event.target.style.height = height;
+				// удаляет обработчик событий
+				// $(event.target).unbind();
+				$ ("<p> Координаты мышки при нажатии: x - " + event.screenX + ", y - " + event.screenY + "</p>" ).insertAfter("div:last");
+				$(document).on ('click', 'p', function(){
+					alert ('hey :)');
+				})
+			}
+
+			$(document).ready(function(){
+				// обработчик событий
+				$("div").bind("click", incSize);
+			});
+		</script>
+
+
+	</body>
+</html>

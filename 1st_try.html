@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta carset = "utf-8">
+		<title> Study JavaScript </title>
+		<script type = 'text/javascript' src = 'lib/jquery-3.0.0.min.js'></script>
+	</head>
+	<body>
+		<div id = 'test' onclick = "$('#test').hide()"> Hello, world! </div>
+		<div class = 'test'> Test 1 </div>
+		<div class = 'test'> Test 2 </div>
+		<p class = 'test'> Test 3 </p>
+		<p class = 'test'> Test 4 </p>
+
+		<img src = "1.jpg" alt ="1" />
+		<img src = "2.jpg" alt ="2" title = "2" />
+		<img src = "2.jpg" alt ="2" title = "3" />
+
+		<ul id = 'menue'>
+			<li><a href = "#"> Ссылка 1 </a></li>
+			<li><a href = "#"> Ссылка 2 </a></li>
+			<li><a href = "#"> Ссылка 3 </a></li>
+			<li><a href = "#"> Ссылка 4 </a></li>
+			<li><a href = "#"> Ссылка 5 </a></li>
+			<li><a href = "#"> Ссылка 6 </a></li>
+		</ul>
+
+		<!--скрипт всегда должен быть под блоками, иначе не будет работать -->
+		<script type = 'text/javascript'>
+			// var str = '    str    ';
+			// alert(str);
+			// alert($.trim(str));
+			// var test = $('#test').html();
+			// alert (test);
+			
+			var test_array = $("div.test");
+
+			for (var i = 0; i < test_array.length; i++){
+				test_array.get(i).style.color = "red";
+			}
+			
+			setTimeout("$('p.test').get(0).style.color = 'green' ", 2000);
+			
+			// var img = $("img[title=3]"); 
+			// alert (img.length);
+
+			var link = $('#menue li a:first');
+			console.log(link.html());
+
+
+			var link3 = $('#menue li a:eq(3)');
+			console.log(link3.html());
+		</script>
+
+	</body>
+</html>
